@@ -63,7 +63,7 @@ python make_list.py
 ```shell
 python invert.py
 ```
-4.search adversarial highly transferable adversarial example
+4. Search for highly transferable adversarial example
 ```shell
 python adv_facenet.py
 ```
