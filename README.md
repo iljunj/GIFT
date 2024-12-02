@@ -12,7 +12,9 @@ The success of deep face recognition (FR) systems has raised serious privacy con
 
 ## Setup
 - **Get code**
-
+```shell
+git clone git@github.com:iljunj/GIFT.git
+```
 - **Build environment**
 ```shell
 cd GIFT
