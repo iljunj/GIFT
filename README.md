@@ -21,27 +21,40 @@ cd GIFT
 conda env create -f environment.yml
 ```
 - **Download FR models and datasets**
-  - Pretrained face recognition models and the subset of a subset of CelebA-HQ for evaluation offered in:
+  - Pretrained face recognition models and the subset of a subset of CelebA-HQ for evaluation offered by [AMT-GAN](https://github.com/CGCL-codes/AMT-GAN):
     [[Google](https://drive.google.com/file/d/1Vuek5-YTZlYGoeoqyM5DlvnaXMeii4O8/view?usp=sharing)] [[Baidu](https://pan.baidu.com/s/1hiIV1GVZTwV1o2Q4DfC2Cg)] pw:1bpv
-  - put the subset of CelebA-HQ  and Pretrained face recognition models in ```GIFT/GIFTInvert/```
+  - put the subset of CelebA-HQ and Pretrained face recognition models in ```GIFT/GIFTInvert/```
 - **Download pretrained base code encoder**
-  Download and unzip  under `GIFT/GIFTInvert/pretrained_models/`.
-| Encoder Pretrained Models                   | Basc Code Spatial Size |
-| :--                                         | :--    |
-| [StyleGAN2 pretrained on FFHQ 1024, 16x16](https://drive.google.com/file/d/1Gwi7I72vL7rdwET1Q0QnR71ZuZ0M3Jx1/view?usp=sharing)    | 16x16
-- **Place the folder in ```GIFT/GIFTInvert/``` and download the pre-trained model**
+  Download the pretrained base code encoder offered by [BDInvert](https://github.com/kkang831/BDInvert_Release) and unzip under `GIFT/GIFTInvert/pretrained_models/`.
+  | Encoder Pretrained Models                   | Basc Code Spatial Size |
+  | :--                                         | :--    |
+  | [StyleGAN2 pretrained on FFHQ 1024, 16x16](https://drive.google.com/file/d/1Gwi7I72vL7rdwET1Q0QnR71ZuZ0M3Jx1/view?usp=sharing)    | 16x16
+- **Download the pre-trained semantic encoder**
+  unzip the folder under `GIFT/GIFTInvert/` and  download the pre-trained model [our pre-trained model](https://drive.google.com/open?id=154JgKpzCPW82qINcVieuPH3fZ2e0P812) offered by [BiSeNet](https://github.com/zllrunning/face-parsing.PyTorch) and save it in `GIFT/GIFTInvert/faceparsing/res/cp`.
+- **The final project should be like this:**
+    ```shell
+    GIFT
+    └- GIFTInvert
+       └- CelebA-HQ
+       └- face_models
+       └- faceparsing
+          └- res/cp/checkpoints
+       └- pretrained_models
+       └- invert.py
+       └- adv_facenet.py
+       └- make_list.py
+       └- ...
+    ```
 
 ## Quick Start
 1. Change directory into BDInvert.
 ```shell
-cd GIFT
+cd GIFT/GIFTInvert
 ```
-
 2. Make image list.
 ```shell
 python make_list.py
 ```
-
 3. Latent Code Initialization.
 ```shell
 python invert.py
@@ -50,7 +63,6 @@ python invert.py
 ```shell
 python adv_facenet.py
 ```
-
 
 ## Acknowledge
 Some of our code are based on [BDInvert](https://github.com/kkang831/BDInvert_Release)，[AMT-GAN](https://github.com/CGCL-codes/AMT-GAN) and [BiSeNet](https://github.com/zllrunning/face-parsing.PyTorch).
