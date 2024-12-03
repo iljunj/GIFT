@@ -51,7 +51,7 @@ conda env create -f environment.yml
     ```
 
 ## Quick Start
-1. Change directory into BDInvert.
+1. Change directory into GIFTInvert.
 ```shell
 cd GIFT/GIFTInvert
 ```
